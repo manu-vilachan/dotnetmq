@@ -22,7 +22,7 @@ using System.Reflection;
 using System.IO;
 using System.Net.Sockets;
 using System.Threading;
-using log4net;
+using Common.Logging;
 using MDS.Communication.Messages;
 using MDS.Communication.Protocols;
 using MDS.Exceptions;

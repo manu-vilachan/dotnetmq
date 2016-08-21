@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
-using log4net;
+using Common.Logging;
 using MDS.Communication.Messages.ControllerMessages;
 using MDS.Exceptions;
 using MDS.GUI;

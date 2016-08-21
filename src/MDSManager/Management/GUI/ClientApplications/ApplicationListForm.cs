@@ -26,7 +26,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using log4net;
+using Common.Logging;
 using MDS.Communication.Messages.ControllerMessages;
 using MDS.Exceptions;
 using MDS.GUI;

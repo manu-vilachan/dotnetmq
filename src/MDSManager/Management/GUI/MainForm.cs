@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Reflection;
 using System.Windows.Forms;
-using log4net;
+using Common.Logging;
 using MDS.Communication.Messages.ControllerMessages;
 using MDS.Exceptions;
 using MDS.GUI;

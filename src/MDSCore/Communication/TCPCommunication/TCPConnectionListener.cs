@@ -21,7 +21,7 @@ using System;
 using System.Reflection;
 using System.Threading;
 using System.Net.Sockets;
-using log4net;
+using Common.Logging;
 using MDS.Threading;
 
 namespace MDS.Communication.TCPCommunication
