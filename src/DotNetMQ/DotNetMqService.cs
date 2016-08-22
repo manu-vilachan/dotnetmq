@@ -19,16 +19,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 using System;
 using System.Reflection;
-using System.ServiceProcess;
 using Common.Logging;
 using MDS;
+using Topshelf;
 
 namespace DotNetMQ
 {
     /// <summary>
     /// This service is used to run DotNetMQ as a Windows Service.
     /// </summary>
-    public partial class DotNetMqService : ServiceBase
+    public class DotNetMqService : ServiceControl
     {
         /// <summary>
         /// Reference to logger.
@@ -45,33 +45,36 @@ namespace DotNetMQ
         /// </summary>
         public DotNetMqService()
         {
-            InitializeComponent();
             _mdsServer = new MDSServer();
         }
 
-        protected override void OnStart(string[] args)
+        public bool Start(HostControl hostControl)
         {
             try
             {
                 _mdsServer.Start();
+                return true;
             }
             catch (Exception ex)
             {
                 Logger.Fatal(ex.Message, ex);
-                Stop();
+                Stop(hostControl);
             }
+            return false;
         }
 
-        protected override void OnStop()
+        public bool Stop(HostControl hostControl)
         {
             try
             {
                 _mdsServer.Stop(true);
+                return true;
             }
             catch (Exception ex)
             {
                 Logger.Warn(ex.Message, ex);
             }
+            return false;
         }
     }
 }
