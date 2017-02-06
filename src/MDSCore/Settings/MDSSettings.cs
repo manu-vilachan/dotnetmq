@@ -145,6 +145,12 @@ namespace MDS.Settings
             LoadFromXml();
         }
 
+        public MDSSettings(List<ServerInfoItem> servers, List<ApplicationInfoItem> applications, List<RouteInfoItem> routes, NameValueCollection settings)
+        {
+            Servers = servers;
+            Applications = applications;
+        }
+
         #endregion
 
         #region Public methods
